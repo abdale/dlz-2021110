@@ -15,8 +15,8 @@ on:
       - ".github/workflows/dataLandingZoneDeployment.yml"
 
 env:
-  AZURE_SUBSCRIPTION_ID: "2150d511-458f-43b9-8691-6819ba2e6c7b" # Update to '{dataLandingZoneSubscriptionId}'
-  AZURE_LOCATION: "northeurope"                                 # Update to '{regionName}'
+  AZURE_SUBSCRIPTION_ID: "34cfd0c2-9c91-46cd-9bc5-6baf71a718c2" # Update to '{dataLandingZoneSubscriptionId}'
+  AZURE_LOCATION: "canadacentral"                                 # Update to '{regionName}'
 
 jobs:
   validation:
@@ -62,7 +62,7 @@ jobs:
         id: data_landing_zone_whatif
         uses: azure/CLI@v1
         with:
-          azcliversion: "2.29.2"
+          azcliversion: "latest"
           inlineScript: |
             az account set \
               --subscription ${{ env.AZURE_SUBSCRIPTION_ID }}
